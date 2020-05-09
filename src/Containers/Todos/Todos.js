@@ -23,9 +23,17 @@ class Todos extends Component {
     this.setState({todos: todo, value: ''})
   }
 
+  enterKeyHandler = (event) => {
+    if (event.key === 'Enter') {
+      let todo = this.state.todos
+      todo.push(this.state.value)
+      this.setState({todos: todo, value: ''})
+    }
+  }
+
   removeTodoHandler = () => {
     let removeTodos = this.state.todos.map((key, i) => {
-      this.state.todos.splice(i, 1)
+      return this.state.todos.splice(i, 1)
     })
     this.setState({todos: removeTodos})
   }
@@ -49,7 +57,7 @@ class Todos extends Component {
     <Aux>
       <h3>Todos List</h3>
       {todoList}
-      <NewTodoInput changed={this.inputChangedHandler} todoValue={this.state.value}/>
+      <NewTodoInput changed={this.inputChangedHandler} enter={this.enterKeyHandler} todoValue={this.state.value}/>
       <NewTodoButton clicked={this.addTodoHandler}/>
     </Aux>
     )
