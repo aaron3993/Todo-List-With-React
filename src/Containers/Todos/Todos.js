@@ -31,11 +31,13 @@ class Todos extends Component {
     }
   }
 
-  removeTodoHandler = () => {
-    let removeTodos = this.state.todos.map((key, i) => {
-      return this.state.todos.splice(i, 1)
-    })
-    this.setState({todos: removeTodos})
+  removeTodoHandler = (key) => {
+    const filteredTodos = this.state.todos.filter(todo => todo !== key)
+    // let removeTodos = this.state.todos.map((key, i) => {
+    //   return this.state.todos.splice(i, 1)
+    // })
+    // this.setState({todos: removeTodos})
+    this.setState({todos: filteredTodos})
   }
 
   render () {
@@ -55,7 +57,7 @@ class Todos extends Component {
     
   return (    
     <Aux>
-      <h3>Todos List</h3>
+      <h1>Todos List</h1>
       {todoList}
       <NewTodoInput changed={this.inputChangedHandler} enter={this.enterKeyHandler} todoValue={this.state.value}/>
       <NewTodoButton clicked={this.addTodoHandler}/>

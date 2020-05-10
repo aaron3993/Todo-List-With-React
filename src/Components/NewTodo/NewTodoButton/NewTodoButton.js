@@ -1,7 +1,8 @@
 import React from 'react'
+import classes from './NewTodoButton.module.css'
 
 const newTodoButton = (props) => (
-  <button onClick={props.clicked} onKeyUp={props.enter}>Add Todo</button>
+  <button className={classes.NewTodoButton} onClick={props.clicked} onKeyUp={props.enter}>Add Todo</button>
 )
 
 export default newTodoButton

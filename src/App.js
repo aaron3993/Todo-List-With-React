@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
-import './App.css';
-import Layout from './Components/Layout/Layout'
 import Todos from './Containers/Todos/Todos'
+import classes from './App.module.css';
 
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <Layout>
+      <main className={classes.App}>
           <Todos />
-        </Layout>
-      </div>
+      </main>
     );
   }
 }

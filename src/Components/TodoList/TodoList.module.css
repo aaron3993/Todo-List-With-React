@@ -1,5 +1,9 @@
 .TodoList {
+  margin: 5px;
   display: flex;
-  flex-direction: row;
-  font-size: 50px;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+  height: 25px;
+  border: 2px solid black;
 }
