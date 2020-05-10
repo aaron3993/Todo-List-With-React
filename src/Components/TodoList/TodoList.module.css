@@ -1,9 +1,11 @@
 .TodoList {
-  margin: 5px;
+  margin: 5px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 300px;
+  width: 500px;
   height: 25px;
   border: 2px solid black;
+  background-color: #800000;
+  color: white;
 }

@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
-import Aux from '../../hoc/Auxiliary/Auxiliary'
-
 import NewTodoInput from '../../Components/NewTodo/NewTodoInput/NewTodoInput'
 import NewTodoButton from '../../Components/NewTodo/NewTodoButton/NewTodoButton'
 import RemoveTodo from '../../Components/RemoveTodo/RemoveTodo'
 import TodoList from '../../Components/TodoList/TodoList'
-import classes from '../../Components/TodoList/TodoList.module.css'
+import TodoListClasses from '../../Components/TodoList/TodoList.module.css'
+import TodoClasses from './Todos.module.css'
 
 class Todos extends Component {
   state = {
@@ -31,21 +30,18 @@ class Todos extends Component {
     }
   }
 
-  removeTodoHandler = (key) => {
-    const filteredTodos = this.state.todos.filter(todo => todo !== key)
-    // let removeTodos = this.state.todos.map((key, i) => {
-    //   return this.state.todos.splice(i, 1)
-    // })
-    // this.setState({todos: removeTodos})
-    this.setState({todos: filteredTodos})
+  removeTodoHandler = (index) => {
+    this.state.todos.splice(index, 1)
+    this.setState({todos: this.state.todos})
+    console.log(this.state.todos)
   }
 
   render () {
     let todoList = this.state.todos.map((eachTodo, i) => {
       return (
-        <div className={classes.TodoList} key={eachTodo + i}>
+        <div className={TodoListClasses.TodoList} key={eachTodo + i}>
           <TodoList todo={eachTodo}/>
-          <RemoveTodo clicked={this.removeTodoHandler}/>
+          <RemoveTodo clicked={() => this.removeTodoHandler()}/>
         </div>
       )
     })
@@ -56,12 +52,12 @@ class Todos extends Component {
     console.log(todoList)
     
   return (    
-    <Aux>
+    <div className={TodoClasses.Todos}>
       <h1>Todos List</h1>
       {todoList}
       <NewTodoInput changed={this.inputChangedHandler} enter={this.enterKeyHandler} todoValue={this.state.value}/>
       <NewTodoButton clicked={this.addTodoHandler}/>
-    </Aux>
+    </div>
     )
   }
 }

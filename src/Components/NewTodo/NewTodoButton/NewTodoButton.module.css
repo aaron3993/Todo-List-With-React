@@ -1,3 +1,6 @@
 .NewTodoButton {
   font-size: 20px;
+  border: 2px solid black;
+  color: white;
+  background-color: #800000;
 }
