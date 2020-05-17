@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import TodoForm from './TodoForm'
 import TodoList from './TodoList'
-import classes from './Todos.module.css'
+import './Todos.css'
 
 const Todo = () => {
   const [enteredTodo, setEnteredTodo] = useState([])
@@ -19,7 +19,7 @@ const Todo = () => {
   }
   console.log(enteredTodo)
   return (
-    <div className={classes.Todos}>
+    <div className="todos">
       <TodoList todos={enteredTodo} onRemoveTodo={removeTodoHandler}/>
       <TodoForm onAddTodo={addTodoHandler}/>
     </div>

@@ -1,4 +1,10 @@
-.Todo {
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.todo {
   margin: 5px 0;
   display: flex;
   justify-content: space-between;
