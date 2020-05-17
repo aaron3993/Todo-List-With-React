@@ -1,0 +1,22 @@
+.todo-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.todo-input {
+  margin: 20px 0;
+  width: 300px;
+  font-size: 20px;
+  text-align: center;
+  background-color: #800000;
+  color: white;
+}
+
+.todo-button {
+  width: 150px;
+  font-size: 20px;
+  border: 2px solid black;
+  color: white;
+  background-color: #800000;
+}

@@ -1,12 +1,8 @@
-import React, { Component } from 'react';
-import Todos from './Containers/Todos/Todos'
+import React from 'react';
+import Todos from './Components/Todos/Todos'
 
-class App extends Component {
-  render() {
-    return (
-      <Todos />
-    );
-  }
+const App = props => {
+    return <Todos />
 }
 
 export default App;

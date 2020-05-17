@@ -1,9 +1,9 @@
-.TodoList {
+.Todo {
   margin: 5px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 500px;
+  width: 300px;
   height: 25px;
   border: 2px solid black;
   background-color: #800000;
