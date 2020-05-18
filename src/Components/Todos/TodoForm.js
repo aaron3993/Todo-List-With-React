@@ -27,7 +27,11 @@ const TodoForm = props => {
         }}
         onKeyUp={enterTodoHandler}
       />
-      <button className="todo-button" onClick={addTodoButton}>Add Todo</button>
+      <button
+        className="todo-button"
+        onClick={addTodoButton}>
+        Add Todo
+      </button>
     </section>
   )
 }
